@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+  --color-brand-50: #f5f7ff;
+  --color-brand-100: #ebefff;
+  --color-brand-200: #ced9ff;
+  --color-brand-300: #a1b8ff;
+  --color-brand-400: #6b8cff;
+  --color-brand-500: #4f46e5;
+  --color-brand-600: #3b31c9;
+  --color-brand-700: #2f27a3;
+  --color-brand-800: #282185;
+  --color-brand-900: #252070;
+  --color-brand-950: #151341;
+}
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom Scrollbar for Stripe-like feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effect */
+.hover-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
