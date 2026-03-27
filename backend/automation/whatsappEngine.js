@@ -18,9 +18,11 @@ class WhatsAppEngine {
         if (this.profilePath) {
             options.addArguments(`user-data-dir=${this.profilePath}`);
         }
+        options.addArguments('--headless=new');
         options.addArguments('--disable-gpu');
         options.addArguments('--no-sandbox');
         options.addArguments('--disable-dev-shm-usage');
+        options.addArguments('--remote-debugging-port=9222');
 
         try {
             this.driver = await new Builder()
